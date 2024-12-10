@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+{% if error_message %}
+  <p>{{error_message}}</p>
+{% endif %}
+
+
+<form method="POST" class="col-6 mx-auto card p-3 shadow-lg">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="otp">OTP</label>
+      <input type="text" class="form-control" name="otp" required > 
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Confirm</button>
+  </form>
+
+{% endblock content %}
